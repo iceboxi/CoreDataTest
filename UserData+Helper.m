@@ -29,6 +29,10 @@
                                    inManagedObjectContext:context];
     [fetch setEntity:entity];
     
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"userID" ascending:YES];
+    NSArray *sortArray = [[NSArray alloc] initWithObjects:sort, nil];
+    [fetch setSortDescriptors:sortArray];
+    
     NSArray *allUsers = [context executeFetchRequest:fetch error:nil];
     
     return allUsers;

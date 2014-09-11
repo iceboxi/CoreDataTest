@@ -9,23 +9,21 @@
 #import "BasicView.h"
 
 @implementation BasicView
+@synthesize tableView, searchBar;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, 320, 44)];
+        tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, 416)];
         
+        [self addSubview:searchBar];
+        [self addSubview:tableView];
+        
+        [searchBar setShowsCancelButton:YES];
     }
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TableViewController.h"
+#import "FirstViewController.h"
 #import "UserData+Helper.h"
 
 @implementation AppDelegate
@@ -23,7 +23,7 @@
     [self firstLaunchInit];
     
     UINavigationController *navigationController = [[UINavigationController alloc]
-                                                    initWithRootViewController:[[TableViewController alloc] init]];
+                                                    initWithRootViewController:[[FirstViewController alloc] init]];
     [navigationController setNavigationBarHidden:YES];
     
     self.window.rootViewController = navigationController;
@@ -46,6 +46,50 @@
         user = [UserData newUserWithContext:self.managedObjectContext];
         user.userID = @"A02";
         user.userName = @"李大明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A03";
+        user.userName = @"李大明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A04";
+        user.userName = @"李小明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A05";
+        user.userName = @"李聰明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A06";
+        user.userName = @"王小明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A07";
+        user.userName = @"王明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A08";
+        user.userName = @"小明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A09";
+        user.userName = @"王一一";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A10";
+        user.userName = @"小小明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"B02";
+        user.userName = @"王無明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"B03";
+        user.userName = @"王明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"B04";
+        user.userName = @"考明";
         
         [self.managedObjectContext save:nil];
         

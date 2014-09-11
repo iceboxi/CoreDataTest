@@ -10,4 +10,7 @@
 
 @interface BasicView : UIView
 
+@property(strong, nonatomic) UISearchBar *searchBar;
+@property(strong, nonatomic) UITableView *tableView;
+
 @end
