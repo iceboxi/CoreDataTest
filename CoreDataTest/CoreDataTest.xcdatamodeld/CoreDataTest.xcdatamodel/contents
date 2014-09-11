@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="plate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData" syncable="YES"/>
+    </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES">
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <fetchRequest name="fetchByName" entity="UserData" predicateString="userName CONTAINS $name"/>
+    <elements>
+        <element name="Car" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="UserData" positionX="216" positionY="-43" width="128" height="88"/>
+    </elements>
 </model>

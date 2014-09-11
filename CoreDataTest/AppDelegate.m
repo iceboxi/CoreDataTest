@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TableViewController.h"
+#import "UserData+Helper.h"
 
 @implementation AppDelegate
 
@@ -18,9 +20,37 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [self firstLaunchInit];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:[[TableViewController alloc] init]];
+    [navigationController setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = navigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)firstLaunchInit {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunch"]) {
+        UserData *user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A01";
+        user.userName = @"王大明";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"B01";
+        user.userName = @"李大媽";
+        
+        user = [UserData newUserWithContext:self.managedObjectContext];
+        user.userID = @"A02";
+        user.userName = @"李大明";
+        
+        [self.managedObjectContext save:nil];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunch"];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
