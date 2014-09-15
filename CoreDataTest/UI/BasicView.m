@@ -21,7 +21,7 @@
         [self addSubview:searchBar];
         [self addSubview:tableView];
         
-        [searchBar setShowsCancelButton:YES];
+//        [searchBar setShowsCancelButton:YES];
     }
     return self;
 }

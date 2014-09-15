@@ -113,10 +113,6 @@
 
 #pragma mark search display delegate
 
-//- (void) searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
-//{
-//    
-//}
 
 - (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
