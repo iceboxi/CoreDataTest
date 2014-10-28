@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143E273619FF713100498EED /* Car+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E273519FF713100498EED /* Car+Helper.m */; };
 		146E7C4019B83283007CBAAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146E7C3F19B83283007CBAAF /* Foundation.framework */; };
 		146E7C4219B83283007CBAAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146E7C4119B83283007CBAAF /* CoreGraphics.framework */; };
 		146E7C4419B83283007CBAAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146E7C4319B83283007CBAAF /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143E273419FF713100498EED /* Car+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Car+Helper.h"; sourceTree = "<group>"; };
+		143E273519FF713100498EED /* Car+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Car+Helper.m"; sourceTree = "<group>"; };
 		146E7C3C19B83283007CBAAF /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146E7C3F19B83283007CBAAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		146E7C4119B83283007CBAAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				14BF865119C0437000BFDC22 /* UserData.m */,
 				14BF865A19C0486E00BFDC22 /* UserData+Helper.h */,
 				14BF865B19C0486E00BFDC22 /* UserData+Helper.m */,
+				143E273419FF713100498EED /* Car+Helper.h */,
+				143E273519FF713100498EED /* Car+Helper.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				146E7C5519B83283007CBAAF /* CoreDataTest.xcdatamodeld in Sources */,
 				146E7C4E19B83283007CBAAF /* main.m in Sources */,
 				14BF865519C0437000BFDC22 /* Car.m in Sources */,
+				143E273619FF713100498EED /* Car+Helper.m in Sources */,
 				14BF865219C0437000BFDC22 /* UserData.m in Sources */,
 				146E7C7619B833C8007CBAAF /* BasicView.m in Sources */,
 			);

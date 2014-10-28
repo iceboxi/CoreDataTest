@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FirstViewController.h"
 #import "UserData+Helper.h"
+#import "Car+Helper.h"
 
 @implementation AppDelegate
 
@@ -95,6 +96,33 @@
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunch"];
     }
+    
+    
+    UserData *user = [[UserData getUserDataWithName:@"王明" WithContext:self.managedObjectContext] lastObject];
+    Car *car = [Car newCarWithContext:self.managedObjectContext];
+    [car setPlate:@"One"];
+    [car setBelongto:user];
+    [user addOwnObject:car];
+    
+    car = [Car newCarWithContext:self.managedObjectContext];
+    [car setPlate:@"Two"];
+    [car setBelongto:user];
+    [user addOwnObject:car];
+    
+    [self.managedObjectContext save:nil];
+    
+    DLog(@"%d", [[user own] count]);
+    
+//    [self.managedObjectContext deleteObject:user];
+    
+//    for (Car *c in [user own]) {
+        [self.managedObjectContext deleteObject:[[user own] anyObject]];
+//    }
+    
+//    [user removeOwn:[user own]];
+    [self.managedObjectContext save:nil];
+    
+    DLog(@"%d", [[user own] count]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

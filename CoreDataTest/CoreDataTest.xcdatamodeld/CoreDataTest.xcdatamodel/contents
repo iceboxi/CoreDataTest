@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Car" representedClassName="Car" syncable="YES">
         <attribute name="plate" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData" syncable="YES"/>
@@ -7,7 +7,7 @@
     <entity name="UserData" representedClassName="UserData" syncable="YES">
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car" syncable="YES"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Car" inverseName="belongto" inverseEntity="Car" syncable="YES"/>
     </entity>
     <fetchRequest name="fetchByName" entity="UserData" predicateString="userName CONTAINS $name"/>
     <elements>
